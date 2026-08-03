@@ -1,0 +1,55 @@
+//The following script is automagically created, upon the original submitted script reviewed by RS Academy. Love the AI behind :)
+
+const { test, expect } = require('@playwright/test');
+//import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://eventhub.rahulshettyacademy.com/login');
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill('rajendra.kamisetty@gmail.com');
+  await page.getByRole('textbox', { name: 'Email' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Chetha_11r');
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.getByText('Discover & BookAmazing EventsFrom tech conferences to live concerts, sports').click();
+  await page.getByRole('button', { name: 'Admin' }).click();
+  await page.getByText('From tech conferences to live').click();
+  await page.getByRole('button', { name: 'Admin' }).click();
+  await page.getByRole('navigation').getByRole('link', { name: 'Manage Events' }).click();
+  await page.getByTestId('event-title-input').click();
+  await page.getByTestId('event-title-input').fill('Messi is now Yamal');
+  await page.getByTestId('event-title-input').press('Tab');
+  await page.getByRole('textbox', { name: 'Describe the event…' }).fill('This event created as inspired by FIFA World Cup, with the corrected code as reviewed by RSA');
+  await page.getByLabel('Category*').selectOption('Workshop');
+  await page.getByRole('textbox', { name: 'City*' }).click();
+  await page.getByRole('textbox', { name: 'City*' }).fill('Plano, TX');
+  await page.getByRole('textbox', { name: 'Venue*' }).click();
+  await page.getByRole('textbox', { name: 'Venue*' }).fill('Toyota Stadium');
+  await page.getByRole('textbox', { name: 'Venue*' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Event Date & Time*' }).fill('2026-08-15T10:00');
+  //await page.getByText('Title*DescriptionAnother').click();
+  await page.getByRole('spinbutton', { name: 'Price ($)*' }).click();
+  await page.getByRole('spinbutton', { name: 'Price ($)*' }).fill('10.00');
+  await page.getByRole('spinbutton', { name: 'Price ($)*' }).press('Tab');
+  await page.getByRole('spinbutton', { name: 'Total Seats*' }).fill('1000');
+  await page.getByRole('textbox', { name: 'Image URL (optional)' }).click();
+  await page.getByRole('textbox', { name: 'Image URL (optional)' }).fill('https://ix-marketing.imgix.net/2024-06_blog_the-power-of-images_image-4-tell-stories.jpg');
+  await page.getByTestId('add-event-btn').click();
+  await page.getByTestId('admin-event-form').locator('div').filter({ hasText: '+ Add Event' }).click();
+  await page.getByTestId('nav-events').click();
+  await page.getByRole('link', { name: 'Messi Retro Event' }).click();
+  await page.goto('https://eventhub.rahulshettyacademy.com/events/78107');
+  await page.getByRole('textbox', { name: 'Full Name*' }).click();
+  await page.getByRole('textbox', { name: 'Full Name*' }).fill('F4 Now');
+  await page.getByTestId('customer-email').fill('f1please@yahoo.co.in');
+  await page.getByTestId('customer-email').press('Tab');
+  await page.getByRole('textbox', { name: 'Phone Number*' }).fill('13127250498');
+  await page.getByRole('button', { name: '+' }).click();
+  await page.getByRole('button', { name: 'Confirm Booking' }).click();
+  await page.getByRole('heading', { name: 'Booking Confirmed! ?' }).click();
+  await page.getByRole('button', { name: 'View My Bookings' }).click();
+  await page.getByTestId('booking-card').first().click();
+  await page.getByRole('button', { name: 'View Details' }).first().click();
+  //await page.getByText('My Bookings/M-BLZRZUM-').click();
+  await page.getByRole('button', { name: '← Back to My Bookings' }).click();
+  await page.getByRole('heading', { name: 'Messi Retro Event' }).first().click();
+});
