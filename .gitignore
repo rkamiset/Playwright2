@@ -7,4 +7,7 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .DS_Store
-playwright-report-1787809536013/index.html
+playwright-report*
+pw-allure.cfg.js
+pw-html.cfg.js
+pw-bk.cfg.js
