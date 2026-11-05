@@ -1,17 +1,17 @@
 const { test, expect } = require('@playwright/test');
  
-test('@Webst Client App login', async ({ page }) => {
+test('@E2E Web Client App login', async ({ page }) => {
    //js file- Login js, DashboardPage
-   const email = "anshika@gmail.com";
+   const email = "rajendra.kamisetty@gmail.com";
    const productName = 'ZARA COAT 3';
    const products = page.locator(".card-body");
-   await page.goto("https://rahulshettyacademy.com/client");
-   await page.locator("#userEmail").fill(email);
-   await page.locator("#userPassword").fill("Iamking@000");
+   await page.goto('https://rahulshettyacademy.com/client');
+   await page.locator('#userEmail').fill(email);
+   await page.locator("#userPassword").fill('Chetha_11r');
    await page.locator("[value='Login']").click();
    await page.waitForLoadState('networkidle');
    await page.locator(".card-body b").first().waitFor();
-   const titles = await page.locator(".card-body b").allTextContents();
+   const titles = await page.locator('.card-body b').allTextContents();
    console.log(titles); 
    const count = await products.count();
    for (let i = 0; i < count; ++i) {
@@ -61,6 +61,7 @@ test('@Webst Client App login', async ({ page }) => {
       }
    }
    const orderIdDetails = await page.locator(".col-text").textContent();
+   console.log("Order ID Details: " + orderIdDetails);
    expect(orderId.includes(orderIdDetails)).toBeTruthy();
  
 });

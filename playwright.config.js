@@ -9,4 +9,12 @@ module.exports = defineConfig({
       open: 'never',
     }],
   ],
+      /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  use: {
+
+    browserName : 'chromium', //chromium, safari, toolkit
+    headless : true,
+    screenshot : 'on',
+    trace: 'retain-on-failure',  // captures trace with DOM snapshots for every action or 'retain-on-failure' / 'on-first-retry' to keep files small
+  },
 });
