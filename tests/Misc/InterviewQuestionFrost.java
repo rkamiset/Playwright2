@@ -1,3 +1,4 @@
+package Misc;
 /** This file contains the implementation of the Character, Warrior, and Game classes.
  You may use this file to implement the classes as described in the questions above.
  If you have any questions or need further assistance, feel free to ask.
