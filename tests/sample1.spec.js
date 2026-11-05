@@ -9,6 +9,7 @@ test('basic test', async ({ page }) => {
 
 test.only('test1', async ({page}) => {
     await page.goto('https://www.google.com/');
+    await page.pause();
     console.log(await page.title());
     await expect(page).toHaveTitle("Google");
 });
