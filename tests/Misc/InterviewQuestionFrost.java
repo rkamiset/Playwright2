@@ -57,6 +57,10 @@ abstract class Character {
 class Warrior extends Character {
     private int strengthNum;
 
+    public int getStrengthNum() {
+        return strengthNum;
+    }
+
     public Warrior() {
         super("Vannaka");
         this.strengthNum = 50;
